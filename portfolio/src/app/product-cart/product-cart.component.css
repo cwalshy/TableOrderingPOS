@@ -1,0 +1,126 @@
+.header {
+    font-weight: 800 !important;
+  }
+
+  /* :host {
+    display: grid;
+    grid-template-columns: 3fr 0fr .1fr;
+    grid-column-gap: 10px;
+    padding: 10px;
+    border-bottom: solid 2px gray;
+  } */
+  .product-description {
+   text-align: center;
+   display: grid;
+   width: 100%;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   border-bottom: 1px solid gray;
+   margin-bottom: 2%;
+    }
+  .prod-desc {
+   padding-bottom: 3%;
+    font-style: italic;
+    font-weight: 200;
+    align-self: center;
+    }
+    .prod-quan {
+      text-align: center;
+    }
+  .price {
+    align-self: center;
+  }
+  .add-button {
+    background: transparent;
+    border: none;
+    font-size: 2em;
+    font-weight: 700;
+    align-self: center
+  }
+  li {
+    list-style: none;
+  }
+
+  .nav {
+    background-color: #37344E;
+    position: sticky;
+    width: 100%;
+    display: grid;
+    height: auto;
+}
+
+
+.cart-icon {
+    padding: 5%;
+    color: white;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: black;    
+}
+.top-nav {
+  background-color: #3f51b5;
+  width: 100%;
+  display: grid;
+  height: auto;
+  top: 0%;
+}
+.inner-nav a {
+  margin: 1%;
+}
+.cart-total {
+  margin: 0px 0%;
+  padding: 2%;
+  width: 100%;
+  box-shadow: initial;
+  border: 1px solid;
+  border-radius: 0;
+  background-color: white;
+  float: right;
+}
+.inner-total {
+  width: 50%;
+  float: right;
+}
+.cart-container {
+  background-color: white;
+}
+.ul-box {
+  padding: 0%;
+  margin: 5%;
+  max-height: 400px;
+  overflow: scroll;
+  z-index: 0;
+  z-index: -1;
+  background: transparent !important ;
+}
+
+.cart-list {
+  margin: 1em 0;
+  padding: 1em 0;
+  text-align: center;
+  display: grid;
+  width: 100%;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  border-bottom: 1px solid gray;
+  margin-bottom: 2%;
+  width: 100%;
+}
+.delete-button {
+  padding: 0;
+    color: white;
+    min-width: 30px;
+    background-color: #f44336;
+    line-height: 20px;
+}
+
+.pseudo-fade {
+  background: rgb(255,255,255);
+  background: linear-gradient(
+180deg
+, rgba(255,255,255,0) 95%, rgba(0,0,38,0.31) 110%);
+  margin: 0%;
+  z-index: 5;
+}

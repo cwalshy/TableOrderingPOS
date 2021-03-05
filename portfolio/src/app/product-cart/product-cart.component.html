@@ -1,0 +1,59 @@
+<div class="top-nav">
+    <div class="inner-nav">
+  
+        <a mat-button  class="mat-raised-button mat-secondary" routerLink="/table/{{table}}/products" routerLinkActive="active">Back</a>
+        
+      </div>
+      </div>
+      
+<div class="cart-container">
+    <div class="pseudo-fade">
+<ul class="ul-box">
+    <li class="cart-list" *ngFor="let item of datas">
+    <div class="prod-name">
+    {{ item.itemName }} 
+    </div>
+    <div class="prod-quan">
+        ${{ item.price }} 
+        </div>
+        <div class="prod-quan">
+            {{ item.quantity }} 
+            </div>
+            <div class="price">
+                ${{ item.quantity * item.price}} 
+
+            </div>
+            <div class="price" style="justify-self: center">
+                <button class="delete-button" (click)=deleteItem(item.itemName) mat-raised-button >X</button>
+
+            </div>
+    </li>
+</ul>
+</div>
+
+    <li class="cart-total">
+        <div class="price inner-total">
+            <span>Total: ${{ total.totalPrice }}</span>
+        </div>
+    </li>
+
+</div>
+<div class="checkout-buttons">
+
+    <div class="empty-cart">
+        <button mat-button class="mat-raised-button mat-warning"
+        (click)="clearCart()">
+        Empty Cart
+        </button>
+    </div>
+    <div class="checkout">
+        <button mat-button class="mat-raised-button mat-primary"
+        (click)="purchaseCourse()" [disabled]="purchaseStarted">
+        checkout
+        </button>
+    </div>
+</div>
+
+
+
+

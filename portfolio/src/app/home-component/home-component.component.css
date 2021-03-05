@@ -1,0 +1,121 @@
+
+
+
+.landing-tile-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1.5em;
+    width: 97.5%;
+    margin: 1.5% auto;
+}
+
+.landing-tiles-content {
+background-color: #2274A5;
+opacity: 1;
+display: grid;
+color: white;
+margin: .2%;
+}
+.tile-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.tile-title, .tile-number {
+    margin: 8.5%;
+    align-self: center;
+}
+.more-info {
+    width: 100%;
+    text-align: center;
+    background-color: #1D638D;
+}
+.more-info > p {
+    padding: 0;
+    text-align: center;
+    margin-right: 4%;
+
+}
+.more-info > a {
+    padding: 0;
+    text-align: center;
+    margin-left: 4%;
+
+}
+.arrow-right {
+    vertical-align: middle;
+    border-radius: 50%;
+    padding: .3%;
+    background-color: white;
+    margin-left: .5%;
+}
+.landing-content-container {
+    display: grid;
+    /* grid-template-columns: 2.25fr 1fr; */
+    width: 70.5%;
+    grid-column-gap: 2.75em;
+    margin: 0 auto;
+    padding-top: 1.25%;
+}
+.landing-picture {
+    background-color: aliceblue;
+    height: 900px;
+}
+.landing-portfolio-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 3em;
+}
+.landing-portfolio-item {
+    background-color: aliceblue;
+    height: 426px;
+}
+.app-container {
+    background-color: white;
+    height: auto;
+    margin: 1%;
+    padding: 2%;
+}
+.top {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-gap: 0.5em;
+}
+.bottom {
+    width: 100%;
+
+}
+@media only screen and (max-width: 900px) {
+
+    .landing-content-container {
+        width: 95%;
+
+    }
+    .top {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.app-container {
+    background-color: white;
+    height: auto;
+    margin: 1%;
+    padding: 2%;
+}
+@media only screen and (max-width: 500px) {
+
+    .landing-content-container {
+        width: 97.5%;
+
+    }
+    .top {
+        grid-template-columns: 1fr;
+    }
+    .app-container {
+        background-color: white;
+        height: auto;
+        margin: .5%;
+        padding: .5%;
+    }
+}

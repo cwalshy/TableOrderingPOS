@@ -30,8 +30,6 @@ export class StorageService implements OnDestroy {
           
           currentPrice = element.price * element.quantity;
           totalPrice= currentPrice + totalPrice;
-          console.log(totalPrice);
-          console.log(currentPrice);
         });
           
           let cartLength;
@@ -39,6 +37,14 @@ export class StorageService implements OnDestroy {
           this.cart = {totalPrice, cartLength};
           this.store('cart', this.cart);
         }
+
+    calculateInitial(quantity, price) {
+        let totalPrice = quantity * price
+        let cartLength = 1;
+        let cart 
+        cart = {totalPrice, cartLength};
+        this.store('cart', cart);
+    }
   
     public getStorage(data) {
         let storage = JSON.parse(localStorage.getItem(data));

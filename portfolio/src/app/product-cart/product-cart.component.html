@@ -9,6 +9,8 @@
 <div class="cart-container">
     <div class="pseudo-fade">
 <ul class="ul-box">
+    <ng-container *ngIf ='total.totalPrice > 0; else emptyMessage'> 
+
     <li class="cart-list" *ngFor="let item of datas">
     <div class="prod-name">
     {{ item.itemName }} 
@@ -28,14 +30,25 @@
 
             </div>
     </li>
+    </ng-container>
+    <ng-template #emptyMessage>
+       <div class="empty-cart">Please add a product to your cart</div>
+    </ng-template>
 </ul>
 </div>
 
+<ng-container *ngIf ='total.totalPrice > 0; else emptyCart'> 
     <li class="cart-total">
         <div class="price inner-total">
-            <span>Total: ${{ total.totalPrice }}</span>
+            <span>Total: ${{ total.totalPrice }} <span class='gst'>(inc ${{total.totalPrice * 0.1}} GST)</span></span>
         </div>
     </li>
+</ng-container>
+
+<ng-template #emptyCart>
+
+
+</ng-template>
 
 </div>
 <div class="checkout-buttons">

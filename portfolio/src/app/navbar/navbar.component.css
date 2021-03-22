@@ -1,19 +1,10 @@
 .nav {
-    background-color: #3f51b5;
+    background-color: #414249;
     position: fixed;
     width: 100%;
     display: grid;
-    height: auto;
+    height: 7.5vh;
     bottom: 0%;
-}
-
-.top-nav {
-    background-color: #37344E;
-    width: 100%;
-    display: grid;
-    height: auto;
-    position: absolute;
-    top: 0%;
 }
 
 .cart-icon {
@@ -22,14 +13,15 @@
     vertical-align: middle;
 }
 .inner-nav > a {
-    padding: 2.5%;
     font-weight: bold;
     letter-spacing: 3px;
     text-align: center;
     font-size: 18px;
-    border: solid 2px #f0f0f0;
-    background: transparent;
-    margin: 1%;
+    background: #ff4081;
+    background-color: #3f51b5;
+    margin: 5% auto;
+    color: white;
+    align-self: center;
 }
 .inner-nav > .price {
     width: 85%;

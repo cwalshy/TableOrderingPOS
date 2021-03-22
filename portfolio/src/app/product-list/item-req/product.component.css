@@ -34,13 +34,18 @@
 }
 .item-container {
   display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   justify-content: center;
   text-align: center;
   border-radius: 5px;
   font-size: 22px;
   width: 30%;
-  margin: 0 auto;
-  margin-bottom: 10%;
+  /* margin: auto auto; */
+  /* height: 100%; */
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 .menu-container {
   display: grid;
@@ -94,7 +99,7 @@ mat-form-field {
 
 @media only screen and (max-width: 400px) {
     .item-container {
-        width: 40%;
+        width: 100%;
     }
 }
 @media only screen and (max-width: 300px) {

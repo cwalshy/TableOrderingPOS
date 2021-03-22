@@ -123,10 +123,9 @@ errorNoMixer() {
       if(this.selectedMixer == undefined) {
         this.errorNoMixer();
         return;
-
-
       }
       else 
+
       itemName = itemName + ' & ' + this.selectedMixer;
 
     }
@@ -185,7 +184,6 @@ errorNoMixer() {
     else {
 
 
-      // this.datas = JSON.parse(localStorage.getItem('data'));
   
       this.cartProductList.push({itemName, price, id, quantity}); // enhance "product" object with "num" property)
   
@@ -200,9 +198,10 @@ errorNoMixer() {
      
       this.successmsg(itemName, quantity);
 
-      this.datas[this.productExistInCart].quantity == quantity;
 
-      this.storageService.calculateTotal();
+      
+      this.storageService.calculateInitial(quantity, price);
+
 
       return;
       }

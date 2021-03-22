@@ -55,6 +55,7 @@ import { LoginComponent } from './admin/login/login.component';
 import {UpdateMenuComponent} from './orders/update-menu/update-menu.component';
 import { AddItemComponent } from './orders/update-menu/add-item/add-item.component';
 import { SuccessComponent } from './product-cart/success/success.component';
+import { ShiftReportsComponent } from './orders/shift-reports/shift-reports.component';
 
 
 const config = {
@@ -80,6 +81,7 @@ const config = {
     NavbarComponent,
     LoginComponent,
     UpdateMenuComponent,
+    ShiftReportsComponent,
     AddItemComponent,
     SuccessComponent
     

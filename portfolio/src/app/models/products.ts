@@ -1,5 +1,6 @@
 export interface Products {
     payload: any,
+    available: boolean,
     id: string,
     category: string,
     description: string,
@@ -7,5 +8,6 @@ export interface Products {
     cost: number,
     subcategory: string,
     image: string,
+    costOfSales: string,
     edit
 }

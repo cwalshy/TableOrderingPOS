@@ -7,12 +7,12 @@
       </div>
       </div>
 
-    
+    <div class ='centered-item'>
     <div class="item-container" *ngIf="products as product">
-      <div class="item-image item">
+      <!-- <div class="item-image item">
           <img src='assets/img/{{product.image}}' class="item-images lazyloaded">
       </div>
-  <hr>
+  <hr> -->
       <div class="item-name item">
       {{product.name}} 
       </div>
@@ -53,11 +53,18 @@
       </div>
       </div>
       <div class="item-button item">
-      <button class="addToCart" mat-raised-button color="primary" (click)="addToCart(product.name, product.price, product.id, quantity)">{{buttonContent}}</button>
-      <div> 
+
+      <ng-container *ngIf = 'product.available == true; else notAvailable'>
+
+          <button class="addToCart" mat-raised-button color="primary" (click)="addToCart(product.name, product.price, product.id, quantity)">{{buttonContent}}</button>
+      </ng-container>
+      <ng-template #notAvailable>
+
+          <button class="addToCart" mat-raised-button color="primary" disabled (click)="addToCart(product.name, product.price, product.id, quantity)">Item Currently Unavailable</button>
+        </ng-template>
+
   
-    
-      </div>
-      </div>
-      </div>
+    </div>
+    </div>
+    </div>
       <app-navbar></app-navbar>

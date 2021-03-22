@@ -16,6 +16,7 @@ import { OrdersService } from 'src/app/services/orders.service';
 import { MatDialog } from '@angular/material/dialog';
 import { AddItemComponent } from './add-item/add-item.component';
 import { RouterLinkWithHref } from '@angular/router';
+
 class MyDataSource<T> extends DataSource<T> {
   filter: any;
   paginator: any;
@@ -55,7 +56,7 @@ export class UpdateMenuComponent implements OnInit {
 
   dataSource: MatTableDataSource<Products>;
 
-  displayedColumns: string[] = ['name', 'category', 'subcategory', 'price', 'percent', 'available', 'edit', ];
+  displayedColumns: string[] = ['costOfSales','name', 'category', 'subcategory', 'price', 'percent', 'available', 'edit', ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -114,10 +115,20 @@ export class UpdateMenuComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  onChange(e, row) {
+    console.log(e.checked);
+    console.log(row);
+    this.db.collection('products').doc(row.id).update({
+      available: e.checked
+    });
+
+
+  }
 
   edit(e: any) {
     
     if(e.editable == false) {
+
       e.editSave = 'Save'
 
     
@@ -127,8 +138,12 @@ export class UpdateMenuComponent implements OnInit {
 
     } else {
       console.log(e)
+      if(e.category == 'Spirits') {
+        e.percent = "";
+      }
       this.db.collection('products').doc(e.id).update({
         name: e.name,
+        costOfSales: e.costOfSales,
         category: e.category,
         subcategory: e.subcategory,
         price: e.price,
@@ -141,6 +156,7 @@ export class UpdateMenuComponent implements OnInit {
     e.editable = false;
     }
 
+    console.log(e)
 
   }
 

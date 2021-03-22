@@ -71,7 +71,11 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
 
 }
-
+.centered-item {
+  display: flex;
+  height: 70vh;
+  align-items: center;
+}
 .header {
     font-weight: 800 !important;
   }
@@ -279,7 +283,7 @@
         }
         .price {
             font-size: 14px;
-            justify-self: center
+            justify-self: center;
         }
         .addToCart {
             font-size: 14px;
@@ -305,7 +309,7 @@ ul {
   background-color: #3f51b5;
   width: 100%;
   display: grid;
-  height: auto;
+  height: 6.5vh;
   top: 0%;
 }
 .inner-nav a {

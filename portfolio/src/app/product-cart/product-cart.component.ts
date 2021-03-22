@@ -29,10 +29,19 @@ export class ProductCartComponent implements OnInit {
   stripe;
   table;
   total;
-  constructor(private storageService: StorageService, private checkout: CheckoutService, private tableNumber: ProductService, private activatedRoute: ActivatedRoute
+  products
+  constructor(private productService: ProductService, private storageService: StorageService, private checkout: CheckoutService, private tableNumber: ProductService, private activatedRoute: ActivatedRoute
     ) { }
 
     ngOnInit() {
+      this.productService.getProducts().snapshotChanges().subscribe(data => {
+        this.products = data.map(e => {
+          return {
+            id: e.payload.doc.id,
+            ...e.payload.doc.data() as {}
+          } as Products;
+        });
+      });
     // get table number from service
     this.table = this.tableNumber.table;
     console.log(this.table);
@@ -71,6 +80,27 @@ deleteItem(itemName) {
 }
   //stripe redirect to checkout function using checkout service 
   purchaseCourse() {
+    this.datas = this.storageService.getStorage('data');
+    let notAvailable = [];
+
+    this.products.forEach(element => {
+
+      if (element.available == false) {
+
+        this.datas.forEach(data => {
+          if(data.id == element.id)
+          notAvailable.push(element.name + " is no longer available");
+
+        });
+      }
+    });
+    if(notAvailable.length > 0 ) {
+    
+      notAvailable.forEach(element => {
+        alert(notAvailable);
+});      
+    }
+    else {
     this.purchaseStarted = true;
     console.log(this.checkout.productList);
     
@@ -91,8 +121,10 @@ deleteItem(itemName) {
             console.log('Error creating checkout session..', err);
             this.purchaseStarted = false;
           });
-    }
+    }}
+
 
   }
+  
 
 }

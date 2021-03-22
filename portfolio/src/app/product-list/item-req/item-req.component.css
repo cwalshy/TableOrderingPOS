@@ -98,7 +98,8 @@
       position: fixed;
       bottom: 0;
       width: 100%;
-      background: aliceblue;
+      background-color: #414249;
+      
     }
   .prod-desc {
    padding-bottom: 3%;

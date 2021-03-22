@@ -36,6 +36,28 @@
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
           
               <!-- ID Column -->
+              <ng-container matColumnDef="costOfSales">
+
+                <mat-header-cell *matHeaderCellDef> Cost of Sales </mat-header-cell>
+                <!-- <mat-cell mat-cell *matCellDef="let row"> {{row.name}} </mat-cell> -->
+                  <mat-cell *matCellDef="let row">
+                    <ng-container *ngIf="!row.editable; else editPlace">
+                      {{row.costOfSales}}
+                      </ng-container>
+
+                      <ng-template #editPlace>
+                        <mat-form-field appearance="no-fill" (keyup.enter)="row.editable = false">
+
+                          <mat-label>Product Category</mat-label>
+                          <mat-select [(ngModel)]='row.costOfSales'>
+                            <mat-option value="food">Food</mat-option>
+                            <mat-option value="beverage">Bev</mat-option>
+                          </mat-select>
+                        </mat-form-field >                     
+                      </ng-template>
+                  </mat-cell>
+                </ng-container>
+
               <ng-container matColumnDef="name">
                 <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
                 <!-- <mat-cell mat-cell *matCellDef="let row"> {{row.name}} </mat-cell> -->
@@ -43,9 +65,11 @@
                     <ng-container *ngIf="!row.editable; else editPlace">
                       {{row.name}}
                       </ng-container>
+
+
                       <ng-template #editPlace>
-                        <input [(ngModel)]="row.name" (keyup.enter)="element.editable = false" >
-                      </ng-template>
+                          <input [(ngModel)]="row.name" (keyup.enter)="row.editable = false" >
+                       </ng-template>
                   </mat-cell>
                 </ng-container>
 
@@ -57,8 +81,18 @@
                       <ng-container *ngIf="!row.editable; else editPlace">
                         {{row.category}}
                         </ng-container>
+
                         <ng-template #editPlace>
-                          <input [(ngModel)]="row.category" (keyup.enter)="element.editable = false" >
+                          <mat-form-field appearance="no-fill" (keyup.enter)="row.editable = false">
+                            <mat-label>Product Category</mat-label>
+                            <mat-select [(ngModel)]='row.category'>
+                              <mat-option value="Beers">Beers</mat-option>
+                              <mat-option value="Wines">Wines</mat-option>
+                              <mat-option value="Spirits">Spirits</mat-option>
+                              <mat-option value="Non-Alcoholic">Non-Alcoholic</mat-option>
+                            </mat-select>
+                          </mat-form-field >
+                
                         </ng-template>
                     </mat-cell>
                 </ng-container>
@@ -71,7 +105,39 @@
                       {{row.subcategory}} 
                       </ng-container>
                       <ng-template #editPlace>
-                        <input [(ngModel)]="row.subcategory" (keyup.enter)="element.editable = false" >
+                        <ng-container *ngIf='row.category == "Wines"'>
+                          <mat-form-field appearance="no-fill" (keyup.enter)="row.editable = false">
+                            <mat-label>Item SubCategory</mat-label>
+                            <mat-select [(ngModel)]='row.subcategory'>
+                              <mat-option value="Red Wine">Red Wine</mat-option>
+                              <mat-option value="White Wine">White Wine</mat-option>
+                              <mat-option value="Sparkling Wine">Sparkling Wine</mat-option>
+                            </mat-select>          
+                          </mat-form-field>
+                        </ng-container>
+                        <ng-container *ngIf='row.category == "Beers"'>
+                          <mat-form-field appearance="no-fill" (keyup.enter)="row.editable = false">
+                            <mat-label>Item SubCategory</mat-label>
+                            <mat-select [(ngModel)]='row.subcategory'>
+                              <mat-option value="Bottled Beer">Bottled Beer</mat-option>
+                              <mat-option value="Pints">Tap Beer</mat-option>
+                            </mat-select>          
+                          </mat-form-field>
+                        </ng-container>
+                        <ng-container *ngIf='row.category == "Spirits"'>
+                          <mat-form-field appearance="no-fill" (keyup.enter)="row.editable = false">
+                            <mat-label>Item SubCategory</mat-label>
+                            <mat-select [(ngModel)]='row.subcategory'>
+                              <mat-option value="Vodka">Vodka</mat-option>
+                              <mat-option value="Gin">Gin</mat-option>
+                              <mat-option value="Rum">Rum</mat-option>
+                              <mat-option value="Tequila">Tequila</mat-option>
+                              <mat-option value="Whiskey">Whiskey</mat-option>
+                              <mat-option value="Cocktails">Cocktails</mat-option>
+                            </mat-select>          
+                          </mat-form-field>
+                        </ng-container>
+                        
                       </ng-template>
                   </mat-cell>
 
@@ -85,7 +151,7 @@
                       {{row.price}}
                       </ng-container>
                       <ng-template #editPlace>
-                        <input [(ngModel)]="row.price" (keyup.enter)="element.editable = false" >
+                        <input [(ngModel)]="row.price" (keyup.enter)="row.editable = false" >
                       </ng-template>
                   </mat-cell>
                   </ng-container>
@@ -97,7 +163,7 @@
                       {{row.percent}}
                       </ng-container>
                       <ng-template #editPlace>
-                        <input [(ngModel)]="row.percent" (keyup.enter)="element.editable = false" >
+                        <input [(ngModel)]="row.percent" (keyup.enter)="row.editable = false" >
                       </ng-template>
                   </mat-cell>
                 </ng-container>
@@ -118,10 +184,10 @@
                   <mat-header-cell *matHeaderCellDef> Available </mat-header-cell>
                   <mat-cell *matCellDef="let row">
                     <ng-container *ngIf="!row.editable; else editPlace">
-                      <mat-checkbox class="example-margin" disabled [ngModel]="row.availablePlaceholder"></mat-checkbox>
+                      <mat-checkbox class="example-margin" disabled [checked]="row.available"></mat-checkbox>
                       </ng-container>
                       <ng-template #editPlace>
-                        <mat-checkbox class="example-margin" [ngModel]="row.available" (keyup.enter)="element.editable = false"></mat-checkbox>
+                        <mat-checkbox class="example-margin" [checked]="row.available" (change)="onChange($event, row)" (keyup.enter)="row.editable = false"></mat-checkbox>
                       </ng-template>
                   </mat-cell>
                 </ng-container>

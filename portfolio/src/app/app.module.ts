@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import {MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ItemReqComponent } from './product-list/item-req/item-req.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'
 import {MatTabsModule} from '@angular/material/tabs';
@@ -70,7 +69,6 @@ const config = {
 @NgModule({
   declarations: [
     AppComponent,
-    ItemReqComponent,
     ProductComponent,
     ProductListComponent,
     ProductCartComponent,

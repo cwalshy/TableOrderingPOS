@@ -40,7 +40,7 @@
 <ng-container *ngIf ='total.totalPrice > 0; else emptyCart'> 
     <li class="cart-total">
         <div class="price inner-total">
-            <span>Total: ${{ total.totalPrice }} <span class='gst'>(inc ${{total.totalPrice * 0.1}} GST)</span></span>
+            <span>Total: ${{ total.totalPrice }} <span class='gst'>(inc {{(total.totalPrice * 0.1).toLocaleString('en-US', {style: 'currency', currency: 'USD'})}} GST)</span></span>
         </div>
     </li>
 </ng-container>

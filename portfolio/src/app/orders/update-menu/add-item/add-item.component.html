@@ -1,73 +1,66 @@
+<!-- WIP -- To Do Simplify/Fix Formatting-->
 <div>
-    <div>
+  <div>
     <h1>Add Item</h1>
-    </div>
-    <div>
-        <mat-form-field appearance="fill">
-            <mat-label>Item Name</mat-label>
-            <input [(ngModel)]='itemName' matInput>
-          </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>Item Name</mat-label>
+      <input [(ngModel)]='itemName' matInput>
+    </mat-form-field>
 
-          <mat-form-field appearance="fill">
-            <mat-label>Product Category</mat-label>
-            <mat-select [(ngModel)]='itemCategory'>
-              <mat-option value="Beers">Beers</mat-option>
-              <mat-option value="Wines">Wines</mat-option>
-              <mat-option value="Spirits">Spirits</mat-option>
-              <mat-option value="Non-Alcoholic">Non-Alcoholic</mat-option>
-            </mat-select>
-          </mat-form-field>
-<ng-container *ngIf='itemCategory == "Wines"'>
-  <mat-form-field appearance="fill">
-    <mat-label>Item SubCategory</mat-label>
-    <mat-select [(ngModel)]='itemSubCategory'>
-      <mat-option value="Red Wine">Red Wine</mat-option>
-      <mat-option value="White Wine">White Wine</mat-option>
-      <mat-option value="Sparkling Wine">Sparkling Wine</mat-option>
-    </mat-select>          
-  </mat-form-field>
-</ng-container>
-<ng-container *ngIf='itemCategory == "Beers"'>
-  <mat-form-field appearance="fill">
-    <mat-label>Item SubCategory</mat-label>
-    <mat-select [(ngModel)]='itemSubCategory'>
-      <mat-option value="Bottled Beer">Bottled Beer</mat-option>
-      <mat-option value="Pints">Tap Beer</mat-option>
-    </mat-select>          
-  </mat-form-field>
-</ng-container>
-<ng-container *ngIf='itemCategory == "Spirits"'>
-  <mat-form-field appearance="fill">
-    <mat-label>Item SubCategory</mat-label>
-    <mat-select [(ngModel)]='itemSubCategory'>
-      <mat-option value="Vodka">Vodka</mat-option>
-      <mat-option value="Gin">Gin</mat-option>
-      <mat-option value="Rum">Rum</mat-option>
-      <mat-option value="Tequila">Tequila</mat-option>
-      <mat-option value="Whiskey">Whiskey</mat-option>
-      <mat-option value="Cocktails">Cocktails</mat-option>
-    </mat-select>          
-  </mat-form-field>
-</ng-container>
+    <mat-form-field appearance="fill">
+      <mat-label>Product Category</mat-label>
+      <mat-select [(ngModel)]='itemCategory'>
+        <mat-option value="Beers">Beers</mat-option>
+        <mat-option value="Wines">Wines</mat-option>
+        <mat-option value="Spirits">Spirits</mat-option>
+        <mat-option value="Non-Alcoholic">Non-Alcoholic</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <ng-container *ngIf='itemCategory == "Wines"'>
+      <mat-form-field appearance="fill">
+        <mat-label>Item SubCategory</mat-label>
+        <mat-select [(ngModel)]='itemSubCategory'>
+          <mat-option value="Red Wine">Red Wine</mat-option>
+          <mat-option value="White Wine">White Wine</mat-option>
+          <mat-option value="Sparkling Wine">Sparkling Wine</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
+    <ng-container *ngIf='itemCategory == "Beers"'>
+      <mat-form-field appearance="fill">
+        <mat-label>Item SubCategory</mat-label>
+        <mat-select [(ngModel)]='itemSubCategory'>
+          <mat-option value="Bottled Beer">Bottled Beer</mat-option>
+          <mat-option value="Pints">Tap Beer</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
+    <ng-container *ngIf='itemCategory == "Spirits"'>
+      <mat-form-field appearance="fill">
+        <mat-label>Item SubCategory</mat-label>
+        <mat-select [(ngModel)]='itemSubCategory'>
+          <mat-option value="Vodka">Vodka</mat-option>
+          <mat-option value="Gin">Gin</mat-option>
+          <mat-option value="Rum">Rum</mat-option>
+          <mat-option value="Tequila">Tequila</mat-option>
+          <mat-option value="Whiskey">Whiskey</mat-option>
+          <mat-option value="Cocktails">Cocktails</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
 
+    <mat-form-field appearance="fill">
+      <mat-label>Desc</mat-label>
+      <input [(ngModel)]='itemDesc' matInput>
+    </mat-form-field>
 
+    <mat-form-field appearance="fill">
+      <mat-label>Price</mat-label>
+      <input type='number' [(ngModel)]='itemPrice' matInput>
+    </mat-form-field>
 
-
-          <mat-form-field appearance="fill">
-            <mat-label>Desc</mat-label>
-            <input [(ngModel)]='itemDesc' matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>Price</mat-label>
-            <input type='number'[(ngModel)]='itemPrice' matInput>
-          </mat-form-field>
-
-          <!-- <mat-form-field appearance="fill">
-            <mat-label>Image</mat-label>
-            <input [(ngModel)]='itemImage 'matInput>
-          </mat-form-field> -->
-
-          <button mat-button-raised (click)='onSubmit()'>
-            Add
-          </button>
+    <button mat-button-raised (click)='onSubmit()'>
+      Add
+    </button>

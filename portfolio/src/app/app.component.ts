@@ -1,17 +1,13 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = "portfolio";
 
-  constructor(private activatedRoute: ActivatedRoute) {
-      
-
-  
-  }
+  constructor(private activatedRoute: ActivatedRoute) {}
 }

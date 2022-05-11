@@ -1,492 +1,508 @@
+<!-- WIP -- To Do Simplify/Fix Formatting -- Apply group together methid to automate HTML-->
+
 <div id="CTAFade" style="display: block;">
-	<div class="callToAction fadein">
-<img src='assets/img/rendezvous-hotel-perth-scarborough-pool-deck-02-2019-1500x500.jpg' class="hero-image lazyloaded">
-<div class="pseudo">
-
+  <div class="callToAction fadein">
+    <img src='assets/img/rendezvous-hotel-perth-scarborough-pool-deck-02-2019-1500x500.jpg'
+      class="hero-image lazyloaded">
+    <div class="pseudo"></div>
+  </div>
 </div>
-</div>
-</div>
-
 <div class='outer-main-container'>
   <div class='item'>
     <div class='item-heading'>
       <div class='category'>
         <h3>Beverage Menu</h3>
       </div>
-    <div class='show-category'>
-      <button (click)="showCat('drinks')" type="checkbox" >
-        <h4>Show/Hide</h4>
-      </button>
+      <div class='show-category'>
+        <button (click)="showCat('drinks')" type="checkbox">
+          <h4>Show/Hide</h4>
+        </button>
+      </div>
     </div>
-  </div>
     <hr>
     <div *ngIf="drinks" id='divshow' class="bev-cat">
-
-  <div class='outer-main-container'>
-    <div class='item'>
-      <div class='item-heading'>
-        <div class='category'>
-          <h3>Beers</h3>
-        </div>
-      <div class='show-category'>
-        <button (click)="showCat('beers')" type="checkbox" >
-          <h4>Show/Hide</h4>
-        </button>
-      </div>
-    </div>
-      <hr>
-      <div *ngIf="beers" id='divshow' class="inner-cat">
-  <div class='item'>
-  <div class='item-heading'>
-  <div class='category'>
-  <h3>Tap Beer</h3>
-  </div>
-  <div class='show-category'>
-  <button (click)="showCat('tapBeer')" type="checkbox" >
-  <h4>Show/Hide</h4>
-  </button>
-  </div>
-  </div>
-  <hr>
-  <div *ngIf="tapBeer" id='divshow'>
-  <div  *ngFor="let product of products">
-  <div *ngIf="product.subcategory === 'Pints'">
- 
-        <li class='product-list'>
-
-        <div class='menu-container'>
-          <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-        <div class="product-description">
-          <div class="prod-name">{{product.name}} </div>
-          <div class="prod-perc">{{product.percent}}</div>
-        </div>
-
-          <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-          <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-            <button class="addToCart">Add To Cart</button>
-          </a>
-          </div>
-        </li>
-      </div>
-    </div>
-    </div>
-
-  
-    <div class='item'>
-    <div class='item-heading'>
-    <div class='category'>
-    <h3>Bottled Beer</h3>
-    </div>
-    <div class='show-category'>
-    <button (click)="showCat('bottled')" type="checkbox" >
-    <h4>Show/Hide</h4>
-    </button>
-    </div>
-    </div>
-    <hr>
-    <div *ngIf="bottled" id='divshow'>
-    <div *ngFor="let product of products">
-    <div *ngIf="product.subcategory === 'Bottled Beer'">
-   
-          <li class='product-list'>
-  
-          <div class='menu-container'>
-            <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-          <div class="product-description">
-            <div class="prod-name">{{product.name}} </div>
-            <div class="prod-perc">{{product.percent}}</div>
-          </div>
-  
-            <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-            <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-              <button class="addToCart">Add To Cart</button>
-            </a>
-            </div>
-          </li>
-        </div>
-      </div>
-      </div>
-      </div>
-    </div>
-    </div>
-    </div>
-
-  <div class='outer-main-container'>
-    <div class='item'>
-      <div class='item-heading'>
-        <div class='category'>
-          <h3>Spirits</h3>
-        </div>
-      <div class='show-category'>
-        <button (click)="showCat('spirits')" type="checkbox" >
-          <h4>Show/Hide</h4>
-        </button>
-      </div>
-    </div>
-      <hr>
-      <div *ngIf="spirits" id='divshow' class="inner-cat">
-      <div class='item'>
-        <div class='item-heading'>
-        <div class='category'>
-        <h3>Vodka</h3>
-        </div>
-        <div class='show-category'>
-        <button (click)="showCat('vodka')" type="checkbox" >
-        <h4>Show/Hide</h4>
-        </button>
-        </div>
-        
-        </div>
-        <hr>
-    
-        <div *ngIf="vodka" id='divshow'>
-            <div *ngFor="let product of products">
-               <div *ngIf="product.subcategory === 'Vodka'">
-                   <li class='product-list'>
-          <div class='menu-container'>
-            <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-          <div class="product-description">
-            <div class="prod-name">{{product.name}} </div>
-            <div class="prod-perc">{{product.percent}}</div>
-          </div>
-  
-            <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-            <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-              <button class="addToCart">Add To Cart</button>
-            </a>
-            </div>
-          </li>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class='item'>
-        <div class='item-heading'>
-        <div class='category'>
-        <h3>Whiskey</h3>
-        </div>
-        <div class='show-category'>
-        <button (click)="showCat('whiskey')" type="checkbox" >
-        <h4>Show/Hide</h4>
-        </button>
-        </div>
-        
-        </div>
-        <hr>
-    
-        <div *ngIf="whiskey" id='divshow'>
-            <div *ngFor="let product of products">
-               <div *ngIf="product.subcategory === 'Whiskey'">
-                   <li class='product-list'>
-          <div class='menu-container'>
-            <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-          <div class="product-description">
-            <div class="prod-name">{{product.name}} </div>
-            <div class="prod-perc">{{product.percent}}</div>
-          </div>
-  
-            <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-            <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-              <button class="addToCart">Add To Cart</button>
-            </a>
-            </div>
-          </li>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class='item'>
-        <div class='item-heading'>
-        <div class='category'>
-        <h3>Rum</h3>
-        </div>
-        <div class='show-category'>
-        <button (click)="showCat('rum')" type="checkbox" >
-        <h4>Show/Hide</h4>
-        </button>
-        </div>
-        
-        </div>
-        <hr>
-    
-        <div *ngIf="rum" id='divshow'>
-            <div *ngFor="let product of products">
-               <div *ngIf="product.subcategory === 'Rum'">
-                   <li class='product-list'>
-          <div class='menu-container'>
-            <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-          <div class="product-description">
-            <div class="prod-name">{{product.name}} </div>
-            <div class="prod-perc">{{product.percent}}</div>
-          </div>
-  
-            <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-            <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-              <button class="addToCart">Add To Cart</button>
-            </a>
-            </div>
-          </li>
-          </div>
-        </div>
-      </div>
-      </div>
-
-      <div class='item'>
-        <div class='item-heading'>
-        <div class='category'>
-        <h3>Gin</h3>
-        </div>
-        <div class='show-category'>
-        <button (click)="showCat('gin')" type="checkbox" >
-        <h4>Show/Hide</h4>
-        </button>
-        </div>
-        
-        </div>
-        <hr>
-    
-        <div *ngIf="gin" id='divshow'>
-            <div *ngFor="let product of products">
-               <div *ngIf="product.subcategory === 'Gin'">
-                   <li class='product-list'>
-          <div class='menu-container'>
-            <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-          <div class="product-description">
-            <div class="prod-name">{{product.name}} </div>
-            <div class="prod-perc">{{product.percent}}</div>
-          </div>
-  
-            <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-            <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-              <button class="addToCart">Add To Cart</button>
-            </a>
-            </div>
-          </li>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class='item'>
-        <div class='item-heading'>
-        <div class='category'>
-        <h3>Tequila</h3>
-        </div>
-        <div class='show-category'>
-        <button (click)="showCat('tequila')" type="checkbox" >
-        <h4>Show/Hide</h4>
-        </button>
-        </div>
-        
-        </div>
-        <hr>
-    
-        <div *ngIf="tequila" id='divshow'>
-            <div *ngFor="let product of products">
-               <div *ngIf="product.subcategory === 'Tequila'">
-                   <li class='product-list'>
-          <div class='menu-container'>
-            <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-          <div class="product-description">
-            <div class="prod-name">{{product.name}} </div>
-            <div class="prod-perc">{{product.percent}}</div>
-          </div>
-  
-            <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-            <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-              <button class="addToCart">Add To Cart</button>
-            </a>
-            </div>
-          </li>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class='item'>
-        <div class='item-heading'>
-        <div class='category'>
-        <h3>Cocktails</h3>
-        </div>
-        <div class='show-category'>
-        <button (click)="showCat('cocktails')" type="checkbox" >
-        <h4>Show/Hide</h4>
-        </button>
-        </div>
-        
-        </div>
-        <hr>
-    
-        <div *ngIf="cocktails" id='divshow'>
-            <div *ngFor="let product of products">
-               <div *ngIf="product.subcategory === 'Cocktails'">
-                   <li class='product-list'>
-          <div class='menu-container'>
-            <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-          <div class="product-description">
-            <div class="prod-name">{{product.name}} </div>
-            <div class="prod-perc">{{product.percent}}</div>
-          </div>
-  
-            <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-            <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-              <button class="addToCart">Add To Cart</button>
-            </a>
-            </div>
-          </li>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
       <div class='outer-main-container'>
         <div class='item'>
           <div class='item-heading'>
             <div class='category'>
-              <h3>Wines</h3>
+              <h3>Beers</h3>
             </div>
-          <div class='show-category'>
-            <button (click)="showCat('wines')" type="checkbox" >
-              <h4>Show/Hide</h4>
-            </button>
+            <div class='show-category'>
+              <button (click)="showCat('beers')" type="checkbox">
+                <h4>Show/Hide</h4>
+              </button>
+            </div>
           </div>
-        </div>
           <hr>
-          <div *ngIf="wines" id='divshow' class="inner-cat">
-            <div class='outer-main-container'>
-              <div class='item'>
-                <div class='item-heading'>
-                  <div class='category'>
-                    <h3>By The Bottle</h3>
-                  </div>
+          <div *ngIf="beers" id='divshow' class="inner-cat">
+            <div class='item'>
+              <div class='item-heading'>
+                <div class='category'>
+                  <h3>Tap Beer</h3>
+                </div>
                 <div class='show-category'>
-                  <button (click)="showCat('wineBottle')" type="checkbox" >
+                  <button (click)="showCat('tapBeer')" type="checkbox">
                     <h4>Show/Hide</h4>
                   </button>
                 </div>
               </div>
-                <hr>
-                <div *ngIf="wineBottle" id='divshow' class="inner-cat">
+              <hr>
+              <div *ngIf="tapBeer" id='divshow'>
+                <div *ngFor="let product of products">
+                  <div *ngIf="product.subcategory === 'Pints'">
 
+                    <li class='product-list'>
 
-
-            <div class='outer-main-container'>
-              <div class='item'>
-                <div class='item-heading'>
-                  <div class='category'>
-                    <h3>Red Wines</h3>
-                  </div>
-                <div class='show-category'>
-                  <button (click)="showCat('redWine')" type="checkbox" >
-                    <h4>Show/Hide</h4>
-                  </button>
-                </div>
-              </div>
-                <hr>
-                <div *ngIf="redWine" id='divshow' class="inner-cat">
-                  <div  *ngFor="let product of products">
-                    <div *ngIf="product.subcategory === 'Red Wine'">
-                   
-                          <li class='product-list'>
-                  
-                          <div class='menu-container'>
-                            <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-                          <div class="product-description">
-                            <div class="prod-name">{{product.name}} </div>
-                            <div class="prod-perc">{{product.percent}}</div>
-                          </div>
-                  
-                            <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-                            <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-                              <button class="addToCart">Add To Cart</button>
-                            </a>
-                            </div>
-                          </li>
+                      <div class='menu-container'>
+                        <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                        <div class="product-description">
+                          <div class="prod-name">{{product.name}} </div>
+                          <div class="prod-perc">{{product.percent}}</div>
                         </div>
+
+                        <div class="price">
+                          {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+                        <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                          <button class="addToCart">Add To Cart</button>
+                        </a>
                       </div>
-                   
+                    </li>
+                  </div>
+                </div>
+              </div>
 
 
-              </div>
-              </div>
-              </div>
-              <div class='outer-main-container'>
-                <div class='item'>
-                  <div class='item-heading'>
-                    <div class='category'>
-                      <h3>White Wines</h3>
-                    </div>
+              <div class='item'>
+                <div class='item-heading'>
+                  <div class='category'>
+                    <h3>Bottled Beer</h3>
+                  </div>
                   <div class='show-category'>
-                    <button (click)="showCat('whiteWine')" type="checkbox" >
+                    <button (click)="showCat('bottled')" type="checkbox">
                       <h4>Show/Hide</h4>
                     </button>
                   </div>
                 </div>
-                  <hr>
-                  <div *ngIf="whiteWine" id='divshow' class="inner-cat">
-                    <div  *ngFor="let product of products">
-                      <div *ngIf="product.subcategory === 'White Wine'">
-                     
-                            <li class='product-list'>
-                    
-                            <div class='menu-container'>
-                              <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-                            <div class="product-description">
-                              <div class="prod-name">{{product.name}} </div>
-                              <div class="prod-perc">{{product.percent}}</div>
-                            </div>
-                    
-                              <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-                              <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-                                <button class="addToCart">Add To Cart</button>
-                              </a>
-                              </div>
-                            </li>
+                <hr>
+                <div *ngIf="bottled" id='divshow'>
+                  <div *ngFor="let product of products">
+                    <div *ngIf="product.subcategory === 'Bottled Beer'">
+
+                      <li class='product-list'>
+
+                        <div class='menu-container'>
+                          <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                          <div class="product-description">
+                            <div class="prod-name">{{product.name}} </div>
+                            <div class="prod-perc">{{product.percent}}</div>
                           </div>
+
+                          <div class="price">
+                            {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+                          <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                            <button class="addToCart">Add To Cart</button>
+                          </a>
                         </div>
-                     
-                
-                  </div>
-                </div>
-                </div>
-                <div class='outer-main-container'>
-                  <div class='item'>
-                    <div class='item-heading'>
-                      <div class='category'>
-                        <h3>Sparkling Wine</h3>
-                      </div>
-                    <div class='show-category'>
-                      <button (click)="showCat('sparklingWine')" type="checkbox" >
-                        <h4>Show/Hide</h4>
-                      </button>
+                      </li>
                     </div>
                   </div>
-                    <hr>
-                    <div *ngIf="sparklingWine" id='divshow' class="inner-cat">
-                      <div  *ngFor="let product of products">
-                        <div *ngIf="product.subcategory === 'Sparkling Wine'">
-                              <li class='product-list'>
-                              <div class='menu-container'>
-                                <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-                              <div class="product-description">
-                                <div class="prod-name">{{product.name}} </div>
-                                <div class="prod-perc">{{product.percent}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='outer-main-container'>
+          <div class='item'>
+            <div class='item-heading'>
+              <div class='category'>
+                <h3>Spirits</h3>
+              </div>
+              <div class='show-category'>
+                <button (click)="showCat('spirits')" type="checkbox">
+                  <h4>Show/Hide</h4>
+                </button>
+              </div>
+            </div>
+            <hr>
+            <div *ngIf="spirits" id='divshow' class="inner-cat">
+              <div class='item'>
+                <div class='item-heading'>
+                  <div class='category'>
+                    <h3>Vodka</h3>
+                  </div>
+                  <div class='show-category'>
+                    <button (click)="showCat('vodka')" type="checkbox">
+                      <h4>Show/Hide</h4>
+                    </button>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div *ngIf="vodka" id='divshow'>
+                  <div *ngFor="let product of products">
+                    <div *ngIf="product.subcategory === 'Vodka'">
+                      <li class='product-list'>
+                        <div class='menu-container'>
+                          <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                          <div class="product-description">
+                            <div class="prod-name">{{product.name}} </div>
+                            <div class="prod-perc">{{product.percent}}</div>
+                          </div>
+
+                          <div class="price">
+                            {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+                          <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                            <button class="addToCart">Add To Cart</button>
+                          </a>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='item'>
+                <div class='item-heading'>
+                  <div class='category'>
+                    <h3>Whiskey</h3>
+                  </div>
+                  <div class='show-category'>
+                    <button (click)="showCat('whiskey')" type="checkbox">
+                      <h4>Show/Hide</h4>
+                    </button>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div *ngIf="whiskey" id='divshow'>
+                  <div *ngFor="let product of products">
+                    <div *ngIf="product.subcategory === 'Whiskey'">
+                      <li class='product-list'>
+                        <div class='menu-container'>
+                          <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                          <div class="product-description">
+                            <div class="prod-name">{{product.name}} </div>
+                            <div class="prod-perc">{{product.percent}}</div>
+                          </div>
+
+                          <div class="price">
+                            {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+                          <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                            <button class="addToCart">Add To Cart</button>
+                          </a>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='item'>
+                <div class='item-heading'>
+                  <div class='category'>
+                    <h3>Rum</h3>
+                  </div>
+                  <div class='show-category'>
+                    <button (click)="showCat('rum')" type="checkbox">
+                      <h4>Show/Hide</h4>
+                    </button>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div *ngIf="rum" id='divshow'>
+                  <div *ngFor="let product of products">
+                    <div *ngIf="product.subcategory === 'Rum'">
+                      <li class='product-list'>
+                        <div class='menu-container'>
+                          <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                          <div class="product-description">
+                            <div class="prod-name">{{product.name}} </div>
+                            <div class="prod-perc">{{product.percent}}</div>
+                          </div>
+
+                          <div class="price">
+                            {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+                          <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                            <button class="addToCart">Add To Cart</button>
+                          </a>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class='item'>
+                <div class='item-heading'>
+                  <div class='category'>
+                    <h3>Gin</h3>
+                  </div>
+                  <div class='show-category'>
+                    <button (click)="showCat('gin')" type="checkbox">
+                      <h4>Show/Hide</h4>
+                    </button>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div *ngIf="gin" id='divshow'>
+                  <div *ngFor="let product of products">
+                    <div *ngIf="product.subcategory === 'Gin'">
+                      <li class='product-list'>
+                        <div class='menu-container'>
+                          <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                          <div class="product-description">
+                            <div class="prod-name">{{product.name}} </div>
+                            <div class="prod-perc">{{product.percent}}</div>
+                          </div>
+
+                          <div class="price">
+                            {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+                          <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                            <button class="addToCart">Add To Cart</button>
+                          </a>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='item'>
+                <div class='item-heading'>
+                  <div class='category'>
+                    <h3>Tequila</h3>
+                  </div>
+                  <div class='show-category'>
+                    <button (click)="showCat('tequila')" type="checkbox">
+                      <h4>Show/Hide</h4>
+                    </button>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div *ngIf="tequila" id='divshow'>
+                  <div *ngFor="let product of products">
+                    <div *ngIf="product.subcategory === 'Tequila'">
+                      <li class='product-list'>
+                        <div class='menu-container'>
+                          <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                          <div class="product-description">
+                            <div class="prod-name">{{product.name}} </div>
+                            <div class="prod-perc">{{product.percent}}</div>
+                          </div>
+
+                          <div class="price">
+                            {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+                          <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                            <button class="addToCart">Add To Cart</button>
+                          </a>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='item'>
+                <div class='item-heading'>
+                  <div class='category'>
+                    <h3>Cocktails</h3>
+                  </div>
+                  <div class='show-category'>
+                    <button (click)="showCat('cocktails')" type="checkbox">
+                      <h4>Show/Hide</h4>
+                    </button>
+                  </div>
+
+                </div>
+                <hr>
+
+                <div *ngIf="cocktails" id='divshow'>
+                  <div *ngFor="let product of products">
+                    <div *ngIf="product.subcategory === 'Cocktails'">
+                      <li class='product-list'>
+                        <div class='menu-container'>
+                          <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                          <div class="product-description">
+                            <div class="prod-name">{{product.name}} </div>
+                            <div class="prod-perc">{{product.percent}}</div>
+                          </div>
+
+                          <div class="price">
+                            {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+                          <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                            <button class="addToCart">Add To Cart</button>
+                          </a>
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='outer-main-container'>
+              <div class='item'>
+                <div class='item-heading'>
+                  <div class='category'>
+                    <h3>Wines</h3>
+                  </div>
+                  <div class='show-category'>
+                    <button (click)="showCat('wines')" type="checkbox">
+                      <h4>Show/Hide</h4>
+                    </button>
+                  </div>
+                </div>
+                <hr>
+                <div *ngIf="wines" id='divshow' class="inner-cat">
+                  <div class='outer-main-container'>
+                    <div class='item'>
+                      <div class='item-heading'>
+                        <div class='category'>
+                          <h3>By The Bottle</h3>
+                        </div>
+                        <div class='show-category'>
+                          <button (click)="showCat('wineBottle')" type="checkbox">
+                            <h4>Show/Hide</h4>
+                          </button>
+                        </div>
+                      </div>
+                      <hr>
+                      <div *ngIf="wineBottle" id='divshow' class="inner-cat">
+
+
+
+                        <div class='outer-main-container'>
+                          <div class='item'>
+                            <div class='item-heading'>
+                              <div class='category'>
+                                <h3>Red Wines</h3>
                               </div>
-                      
-                                <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-                                <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-                                  <button class="addToCart">Add To Cart</button>
-                                </a>
+                              <div class='show-category'>
+                                <button (click)="showCat('redWine')" type="checkbox">
+                                  <h4>Show/Hide</h4>
+                                </button>
+                              </div>
+                            </div>
+                            <hr>
+                            <div *ngIf="redWine" id='divshow' class="inner-cat">
+                              <div *ngFor="let product of products">
+                                <div *ngIf="product.subcategory === 'Red Wine'">
+
+                                  <li class='product-list'>
+
+                                    <div class='menu-container'>
+                                      <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                                      <div class="product-description">
+                                        <div class="prod-name">{{product.name}} </div>
+                                        <div class="prod-perc">{{product.percent}}</div>
+                                      </div>
+
+                                      <div class="price">
+                                        {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}
+                                      </div>
+                                      <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}"
+                                        routerLinkActive="active">
+                                        <button class="addToCart">Add To Cart</button>
+                                      </a>
+                                    </div>
+                                  </li>
                                 </div>
-                              </li>
+                              </div>
+
+
+
                             </div>
                           </div>
-                          </div>
-                          </div>
-                          </div>
-                          
-                       
+                        </div>
+                        <div class='outer-main-container'>
+                          <div class='item'>
+                            <div class='item-heading'>
+                              <div class='category'>
+                                <h3>White Wines</h3>
+                              </div>
+                              <div class='show-category'>
+                                <button (click)="showCat('whiteWine')" type="checkbox">
+                                  <h4>Show/Hide</h4>
+                                </button>
+                              </div>
+                            </div>
+                            <hr>
+                            <div *ngIf="whiteWine" id='divshow' class="inner-cat">
+                              <div *ngFor="let product of products">
+                                <div *ngIf="product.subcategory === 'White Wine'">
 
-                  </div>
-                  </div>
+                                  <li class='product-list'>
+
+                                    <div class='menu-container'>
+                                      <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                                      <div class="product-description">
+                                        <div class="prod-name">{{product.name}} </div>
+                                        <div class="prod-perc">{{product.percent}}</div>
+                                      </div>
+
+                                      <div class="price">
+                                        {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}
+                                      </div>
+                                      <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}"
+                                        routerLinkActive="active">
+                                        <button class="addToCart">Add To Cart</button>
+                                      </a>
+                                    </div>
+                                  </li>
+                                </div>
+                              </div>
+
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class='outer-main-container'>
+                          <div class='item'>
+                            <div class='item-heading'>
+                              <div class='category'>
+                                <h3>Sparkling Wine</h3>
+                              </div>
+                              <div class='show-category'>
+                                <button (click)="showCat('sparklingWine')" type="checkbox">
+                                  <h4>Show/Hide</h4>
+                                </button>
+                              </div>
+                            </div>
+                            <hr>
+                            <div *ngIf="sparklingWine" id='divshow' class="inner-cat">
+                              <div *ngFor="let product of products">
+                                <div *ngIf="product.subcategory === 'Sparkling Wine'">
+                                  <li class='product-list'>
+                                    <div class='menu-container'>
+                                      <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                                      <div class="product-description">
+                                        <div class="prod-name">{{product.name}} </div>
+                                        <div class="prod-perc">{{product.percent}}</div>
+                                      </div>
+
+                                      <div class="price">
+                                        {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}
+                                      </div>
+                                      <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}"
+                                        routerLinkActive="active">
+                                        <button class="addToCart">Add To Cart</button>
+                                      </a>
+                                    </div>
+                                  </li>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                      </div>
+                    </div>
                   </div>
                   <div class='outer-main-container'>
                     <div class='item'>
@@ -494,145 +510,154 @@
                         <div class='category'>
                           <h3>By The Glass</h3>
                         </div>
-                      <div class='show-category'>
-                        <button (click)="showCat('wineGlass')" type="checkbox" >
-                          <h4>Show/Hide</h4>
-                        </button>
-                      </div>
-                    </div>
-                      <hr>
-                      <div *ngIf="wineGlass" id='divshow' class="inner-cat">
-      
-      
-      
-                  <div class='outer-main-container'>
-                    <div class='item'>
-                      <div class='item-heading'>
-                        <div class='category'>
-                          <h3>Red Wines</h3>
-                        </div>
-                      <div class='show-category'>
-                        <button (click)="showCat('redWine')" type="checkbox" >
-                          <h4>Show/Hide</h4>
-                        </button>
-                      </div>
-                    </div>
-                      <hr>
-                      <div *ngIf="redWine" id='divshow' class="inner-cat">
-                        <div  *ngFor="let product of products">
-                          <div *ngIf="product.subcategory === 'Red Wine'">
-                         
-                                <li class='product-list'>
-                        
-                                <div class='menu-container'>
-                                  <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-                                <div class="product-description">
-                                  <div class="prod-name">{{product.name}} </div>
-                                  <div class="prod-perc">{{product.percent}}</div>
-                                </div>
-                        
-                                  <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-                                  <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-                                    <button class="addToCart">Add To Cart</button>
-                                  </a>
-                                  </div>
-                                </li>
-                              </div>
-                            </div>
-                         
-      
-      
-                    </div>
-                    </div>
-                    </div>
-                    <div class='outer-main-container'>
-                      <div class='item'>
-                        <div class='item-heading'>
-                          <div class='category'>
-                            <h3>White Wines</h3>
-                          </div>
                         <div class='show-category'>
-                          <button (click)="showCat('whiteWine')" type="checkbox" >
+                          <button (click)="showCat('wineGlass')" type="checkbox">
                             <h4>Show/Hide</h4>
                           </button>
                         </div>
                       </div>
-                        <hr>
-                        <div *ngIf="whiteWine" id='divshow' class="inner-cat">
-                          <div  *ngFor="let product of products">
-                            <div *ngIf="product.subcategory === 'White Wine'">
-                           
+                      <hr>
+                      <div *ngIf="wineGlass" id='divshow' class="inner-cat">
+
+
+
+                        <div class='outer-main-container'>
+                          <div class='item'>
+                            <div class='item-heading'>
+                              <div class='category'>
+                                <h3>Red Wines</h3>
+                              </div>
+                              <div class='show-category'>
+                                <button (click)="showCat('redWine')" type="checkbox">
+                                  <h4>Show/Hide</h4>
+                                </button>
+                              </div>
+                            </div>
+                            <hr>
+                            <div *ngIf="redWine" id='divshow' class="inner-cat">
+                              <div *ngFor="let product of products">
+                                <div *ngIf="product.subcategory === 'Red Wine'">
+
                                   <li class='product-list'>
-                          
-                                  <div class='menu-container'>
-                                    <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-                                  <div class="product-description">
-                                    <div class="prod-name">{{product.name}} </div>
-                                    <div class="prod-perc">{{product.percent}}</div>
-                                  </div>
-                          
-                                    <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-                                    <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
-                                      <button class="addToCart">Add To Cart</button>
-                                    </a>
+
+                                    <div class='menu-container'>
+                                      <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                                      <div class="product-description">
+                                        <div class="prod-name">{{product.name}} </div>
+                                        <div class="prod-perc">{{product.percent}}</div>
+                                      </div>
+
+                                      <div class="price">
+                                        {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}
+                                      </div>
+                                      <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}"
+                                        routerLinkActive="active">
+                                        <button class="addToCart">Add To Cart</button>
+                                      </a>
                                     </div>
                                   </li>
                                 </div>
                               </div>
-                           
-                      
-                        </div>
-                      </div>
-                      </div>
-                      <div class='outer-main-container'>
-                        <div class='item'>
-                          <div class='item-heading'>
-                            <div class='category'>
-                              <h3>Sparkling Wine</h3>
+
+
+
                             </div>
-                          <div class='show-category'>
-                            <button (click)="showCat('sparklingWine')" type="checkbox" >
-                              <h4>Show/Hide</h4>
-                            </button>
                           </div>
                         </div>
-                          <hr>
-                          <div *ngIf="sparklingWine" id='divshow' class="inner-cat">
-                            <div  *ngFor="let product of products">
-                              <div *ngIf="product.subcategory === 'Sparkling Wine'">
-                                    <li class='product-list'>
+                        <div class='outer-main-container'>
+                          <div class='item'>
+                            <div class='item-heading'>
+                              <div class='category'>
+                                <h3>White Wines</h3>
+                              </div>
+                              <div class='show-category'>
+                                <button (click)="showCat('whiteWine')" type="checkbox">
+                                  <h4>Show/Hide</h4>
+                                </button>
+                              </div>
+                            </div>
+                            <hr>
+                            <div *ngIf="whiteWine" id='divshow' class="inner-cat">
+                              <div *ngFor="let product of products">
+                                <div *ngIf="product.subcategory === 'White Wine'">
+
+                                  <li class='product-list'>
+
                                     <div class='menu-container'>
                                       <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
-                                    <div class="product-description">
-                                      <div class="prod-name">{{product.name}} </div>
-                                      <div class="prod-perc">{{product.percent}}</div>
-                                    </div>
-                            
-                                      <div class="price">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-                                      <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}" routerLinkActive="active">
+                                      <div class="product-description">
+                                        <div class="prod-name">{{product.name}} </div>
+                                        <div class="prod-perc">{{product.percent}}</div>
+                                      </div>
+
+                                      <div class="price">
+                                        {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}
+                                      </div>
+                                      <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}"
+                                        routerLinkActive="active">
                                         <button class="addToCart">Add To Cart</button>
                                       </a>
+                                    </div>
+                                  </li>
+                                </div>
+                              </div>
+
+
+                            </div>
+                          </div>
+                        </div>
+                        <div class='outer-main-container'>
+                          <div class='item'>
+                            <div class='item-heading'>
+                              <div class='category'>
+                                <h3>Sparkling Wine</h3>
+                              </div>
+                              <div class='show-category'>
+                                <button (click)="showCat('sparklingWine')" type="checkbox">
+                                  <h4>Show/Hide</h4>
+                                </button>
+                              </div>
+                            </div>
+                            <hr>
+                            <div *ngIf="sparklingWine" id='divshow' class="inner-cat">
+                              <div *ngFor="let product of products">
+                                <div *ngIf="product.subcategory === 'Sparkling Wine'">
+                                  <li class='product-list'>
+                                    <div class='menu-container'>
+                                      <img src='assets/img/{{product.image}}' class="prod-images lazyloaded">
+                                      <div class="product-description">
+                                        <div class="prod-name">{{product.name}} </div>
+                                        <div class="prod-perc">{{product.percent}}</div>
                                       </div>
-                                    </li>
-                                  </div>
+
+                                      <div class="price">
+                                        {{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}
+                                      </div>
+                                      <a routerLink="/table/{{table}}/products/addToCart/{{product.id}}"
+                                        routerLinkActive="active">
+                                        <button class="addToCart">Add To Cart</button>
+                                      </a>
+                                    </div>
+                                  </li>
                                 </div>
-                                </div>
-                                </div>
-                                </div>
-                                
-                             
-      
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        </div>
-                        </div>
+
+
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
-      
     </div>
-  </div>
-  </div>
-</div>
 
     <div class='outer-main-container'>
       <div class='item'>
@@ -640,17 +665,15 @@
           <div class='category'>
             <h3>Food Menu</h3>
           </div>
-        <div class='show-category'>
-          <button (click)="showCat('food')" type="checkbox" >
-            <h4>Show/Hide</h4>
-          </button>
+          <div class='show-category'>
+            <button (click)="showCat('food')" type="checkbox">
+              <h4>Show/Hide</h4>
+            </button>
+          </div>
         </div>
-      </div>
         <hr>
         <div *ngIf="food" id='divshow' class="inner-cat">
-
-          
-               </div>
-          </div>
+        </div>
+      </div>
     </div>
     <app-navbar></app-navbar>

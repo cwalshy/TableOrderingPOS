@@ -1,4 +1,4 @@
 export interface StripeCheckout {
-    id: string;
-    quantity: number;
+  id: string;
+  quantity: number;
 }

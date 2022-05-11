@@ -1,3 +1,4 @@
+
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {OrdersService} from '../services/orders.service';
 import {Orders} from '../models/orders';
@@ -20,9 +21,9 @@ class MyDataSource<T> extends DataSource<T> {
     return this.observable;
 }
   disconnect(collectionViewer: CollectionViewer): void {
-    
+
   }
-  
+
   constructor(private observable: Observable<T[]>) {
     super();
   }
@@ -45,7 +46,7 @@ class MyDataSource<T> extends DataSource<T> {
 })
 
 
-export class OrdersComponent  implements OnInit  
+export class OrdersComponent  implements OnInit
 {
 
 
@@ -63,7 +64,7 @@ export class OrdersComponent  implements OnInit
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  
+
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private db: AngularFirestore, private ordersService: OrdersService) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');

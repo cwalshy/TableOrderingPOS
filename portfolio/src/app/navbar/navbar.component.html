@@ -1,19 +1,10 @@
-
 <div class="nav">
-    <div class="inner-nav">
+  <div class="inner-nav">
+    <input class="price" placeholder="0" disabled value='Table: {{table}}'>
+    <input class="price" placeholder="0" disabled value='{{totalPrice?.cartLength}}'>
+    <input class="price" placeholder="$0" disabled value='{{totalPrice?.totalPrice}}'>
+    <a mat-raised-button routerLink="/cart" routerLinkActive="active">Cart</a>
+  </div>
+</div>
 
-        <input class="price" placeholder="0" disabled value='Table: {{table}}'>
-
-          <input class="price" placeholder="0" disabled value='{{totalPrice?.cartLength}}'>
-          <input class="price" placeholder="$0" disabled value='{{totalPrice?.totalPrice}}'>
- 
-
-
-     
-        <a mat-raised-button routerLink="/cart" routerLinkActive="active">Cart</a>
-
-      </div>
-      </div>
-    
-<!-- <app-home-component></app-home-component> -->
 <router-outlet></router-outlet>

@@ -1,70 +1,66 @@
+<div class="top-nav">
+  <div class="inner-nav">
 
-  <div class="top-nav">
-    <div class="inner-nav">
-  
-        <a mat-button  class="mat-raised-button mat-secondary" routerLink="/table/{{table}}/products" routerLinkActive="active">Back</a>
-        
-      </div>
-      </div>
+    <a mat-button class="mat-raised-button mat-secondary" routerLink="/table/{{table}}/products"
+      routerLinkActive="active">Back</a>
+  </div>
+</div>
 
-    <div class ='centered-item'>
-    <div class="item-container" *ngIf="products as product">
-      <!-- <div class="item-image item">
-          <img src='assets/img/{{product.image}}' class="item-images lazyloaded">
-      </div>
-  <hr> -->
-      <div class="item-name item">
-      {{product.name}} 
-      </div>
+<div class='centered-item'>
+  <div class="item-container" *ngIf="products as product">
 
-      <ng-container *ngIf='product.category == "Spirits"' class='item'>
-          
+    <div class="item-name item">
+      {{product.name}}
+    </div>
 
-          <mat-form-field>
-            <mat-label>Mixer</mat-label>
-            <mat-select [(ngModel)]="selectedMixer" name="mixer">
-              <mat-option *ngFor="let mixer of mixers" [value]="mixer.viewValue">
-                {{mixer.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+    <ng-container *ngIf='product.category == "Spirits"' class='item'>
 
-        </ng-container>
-  
-      <div class="item-price item">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
-  
-      <div class="item-quantity item">
-  
+      <mat-form-field>
+        <mat-label>Mixer</mat-label>
+        <mat-select [(ngModel)]="selectedMixer" name="mixer">
+          <mat-option *ngFor="let mixer of mixers" [value]="mixer.viewValue">
+            {{mixer.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </ng-container>
+
+    <div class="item-price item">{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+
+    <div class="item-quantity item">
+
       <div class='plus-minus'>
-  
-      <a (click)="minus()" mat-icon-button color="primary" aria-label="">
-      <mat-icon>remove_circle_outline</mat-icon>
-      </a>
+
+        <a (click)="minus()" mat-icon-button color="primary" aria-label="">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </a>
       </div>
-  
+
       <div>
-      {{quantity}}
+        {{quantity}}
       </div>
-  
+
       <div class='plus-minus'>
-      <a class='plus-minus' (click)="add()" mat-icon-button color="primary" aria-label="">
-      <mat-icon>add_circle_outline</mat-icon>
-      </a>
+        <a class='plus-minus' (click)="add()" mat-icon-button color="primary" aria-label="">
+          <mat-icon>add_circle_outline</mat-icon>
+        </a>
       </div>
-      </div>
-      <div class="item-button item">
+    </div>
+    <div class="item-button item">
 
-      <ng-container *ngIf = 'product.available == true; else notAvailable'>
+      <ng-container *ngIf='product.available == true; else notAvailable'>
 
-          <button class="addToCart" mat-raised-button color="primary" (click)="addToCart(product.name, product.price, product.id, quantity)">{{buttonContent}}</button>
+        <button class="addToCart" mat-raised-button color="primary"
+          (click)="addToCart(product.name, product.price, product.id, quantity)">{{buttonContent}}</button>
       </ng-container>
       <ng-template #notAvailable>
 
-          <button class="addToCart" mat-raised-button color="primary" disabled (click)="addToCart(product.name, product.price, product.id, quantity)">Item Currently Unavailable</button>
-        </ng-template>
+        <button class="addToCart" mat-raised-button color="primary" disabled
+          (click)="addToCart(product.name, product.price, product.id, quantity)">Item Currently Unavailable</button>
+      </ng-template>
 
-  
     </div>
-    </div>
-    </div>
-      <app-navbar></app-navbar>
+  </div>
+</div>
+<app-navbar></app-navbar>

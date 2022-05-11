@@ -14,7 +14,6 @@ export class SuccessComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.stripe = this.activatedRoute.snapshot.paramMap.get("stripe-checkout")
-    console.log(this.stripe)
     this.activatedRoute.paramMap.subscribe(params => {
       this.stripe = params.get("stripe-checkout")
     })
